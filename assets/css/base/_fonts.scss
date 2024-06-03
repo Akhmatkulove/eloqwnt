@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Mazzard";
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: local("Mazzard");
+  src: local("assets/fonts/MazzardM-Light.woff2");
+  src: url("assets/fonts/MazzardM-Light.woff2") format("truetype");
+}
+@font-face {
+  font-family: "Mazzard";
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+  src: local("Mazzard");
+  src: local("assets/fonts/MazzardM-Medium.woff2");
+  src: url("assets/fonts/MazzardM-Medium.woff2") format("truetype");
+}

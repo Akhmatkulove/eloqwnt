@@ -1,0 +1,119 @@
+@mixin adaptive($size) {
+  @if $size == phone {
+    @media screen and (max-width: 479px) {
+      @content;
+    }
+  } @else if $size == phone-big {
+    @media screen and (max-width: 620px) {
+      @content;
+    }
+  } @else if $size == tablet-small {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $size == tablet-big {
+    @media screen and (max-width: 992px) {
+      @content;
+    }
+  } @else if $size == desktop-small {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $size == desktop-mid {
+    @media screen and (max-width: 1500px) {
+      @content;
+    }
+  }
+}
+
+@mixin lines($count) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  -webkit-box-orient: vertical;
+  line-clamp: $count;
+}
+
+@mixin gradient($color) {
+  @if $color == first {
+    background: linear-gradient(180deg, #27415e 0%, rgba(39, 65, 94, 0) 100%)
+      border-box;
+    border: 1px solid transparent;
+  } @else if $color == first-mod {
+    background: linear-gradient(180deg, #27415e 0%, rgba(39, 65, 94, 0.4) 100%)
+      border-box;
+    border: 1px solid transparent;
+  } @else if $color == second {
+    border: 1px solid transparent;
+    background: linear-gradient(
+        180deg,
+        rgba(57, 83, 112, 0.21) 0%,
+        #395370 100%
+      )
+      border-box;
+  } @else if $color == input {
+    background: linear-gradient(180deg, #6b85a3 0%, rgba(107, 133, 163, 0) 100%)
+      border-box;
+    border: 1px solid transparent;
+  }
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@mixin gradient-color() {
+  background: linear-gradient(90deg, #ffffff 1.46%, #c4fcfd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  line-height: 130%;
+}
+@mixin scrollbar() {
+  &::-webkit-scrollbar {
+    width: 8px;
+    -webkit-box-shadow: rgba(255,255,255);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgba(0,0,0);
+  }
+}
+@mixin noScrollbar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+}
+@mixin scrollbarCustom() {
+  scrollbar-color: #c4fcfd;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 16px;
+    background-color: #6b85a3;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c4fcfd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+}
+@mixin scrollbarCustomThin() {
+  scrollbar-color: rgba(229, 233, 235, 1);
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(229, 233, 235, 1);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(229, 233, 235, 1);
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  }
+}
